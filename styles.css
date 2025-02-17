@@ -1,0 +1,633 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 15px 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: #0077b6;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.logo img {
+    height: 50px; 
+    margin-right: 10px;
+}
+
+/* Estilos de la navegación */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: #0077b6;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f4f4f4;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+nav ul li:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: #0096c7;
+}
+
+.admission-btn {
+    background-color: #0077b6;
+    border: none;
+    color: #f4f4f4;
+    padding: 15px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.admission-btn:hover {
+    background-color: #ff9900;
+    color: white;
+}
+
+
+#propuesta {
+    display: none;
+}
+
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0096c7;
+    padding: 50px;
+    color: white;
+    height: 100%;
+
+}
+.banner img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.banner-text {
+    width: 50%;
+    font-size: 26px;
+    font-weight: bold;
+    padding-right: 40px;
+}
+
+.banner-text strong {
+    font-weight: bold;
+}
+
+.banner-button {
+    background-color: white;
+    color: #0077b6;
+    border: none;
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.banner-button:hover {
+    background-color: #ffcc00;
+    color: black;
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+}
+
+.aprendizaje {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding: 50px 0;
+}
+.aprendizaje, .profesores {
+    margin: 50px auto;
+    padding: 20px;
+    max-width: 1200px;
+}
+
+.aprendizaje-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.aprendizaje img {
+    width: 50%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.aprendizaje-buttons {
+    margin-top: 20px;
+}
+.aprendizaje-text {
+    flex: 1;
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.5;
+}   
+
+.aprendizaje-buttons button:hover {
+    background: #007bff;
+    color: white;
+}
+.aprendizaje-buttons button {
+    background: transparent;
+    border: 2px solid #007bff;
+    color: #007bff;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.profesores-content {
+    width: 80%;
+    max-width: 900px;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+}
+.profesores {
+    width: 50vw;  /* Rellena todo el ancho de la pantalla */
+    height: 50vh; /* Ajusta la altura al 100% de la pantalla */
+    background: url('profesores.jpg') no-repeat center center;
+    background-size: cover; /* Cubre todo el espacio sin dejar bordes */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px 471px;
+    position: relative;
+    margin: 0;
+}
+.profesores::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Oscurece la imagen para mejorar la visibilidad del texto */
+    z-index: 1;
+}
+.profesores ul {
+    list-style: none;
+    padding: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.profesores ul li {
+    margin: 5px 0;
+    position: relative;
+    z-index: 2;
+}
+
+/* Encabezados y párrafos */
+.profesores h3 {
+    font-size: 28px;
+    font-weight: bold;
+    position: relative;
+    z-index: 2;
+}
+
+.profesores p {
+    font-size: 18px;
+    margin-top: 10px;
+    position: relative;
+    z-index: 2;
+}
+/* Barra decorativa */
+.profesores-content h3::before {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: #ffffff;
+    margin-bottom: 10px;
+}
+
+.profesores-content p strong {
+    font-weight: bold;
+}
+
+/* ESTILOS GENERALES */
+#metodologia {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #fff;
+  }
+  
+  /* SECCIÓN HERO (PORTADA) */
+  .hero-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #f5f5f5;
+  }
+  
+  .hero-text {
+    flex: 1;
+    min-width: 280px;
+    margin-right: 20px;
+  }
+  
+  .hero-text h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .hero-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .hero-image {
+    flex: 1;
+    min-width: 280px;
+    text-align: center;
+  }
+  
+  .hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  /* ENFOQUE DE ENSEÑANZA */
+  .enfoque-section {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .enfoque-section h3 {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+  }
+  
+  .enfoque-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .enfoque-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    flex: 1 1 250px;
+    max-width: 300px;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: left; /* O 'center' si prefieres */
+  }
+  
+  .enfoque-card .icon {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .enfoque-card h4 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .enfoque-card p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  
+  /* ¿POR QUÉ ELEGIR...? */
+  .porque-section {
+    background-color: #f5f5f5;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .porque-section h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+  
+  .porque-section p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  /* TESTIMONIOS */
+  .testimonios-section {
+    padding: 40px 20px;
+    background-color: #fff;
+  }
+  
+  .testimonios-section h3 {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 30px;
+  }
+  
+  .testimonios-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .testimonios-list {
+    flex: 1 1 200px;
+    max-width: 250px;
+  }
+  
+  .testimonios-list ul {
+    list-style: none;
+  }
+  
+  .testimonios-list li {
+    margin-bottom: 10px;
+    padding-left: 15px;
+    position: relative;
+  }
+  
+  .testimonios-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #007BFF;
+  }
+  
+  .testimonio-detalle {
+    flex: 2 1 400px;
+    max-width: 600px;
+  }
+  
+  .testimonio-detalle blockquote {
+    font-style: italic;
+    border-left: 4px solid #007bff;
+    padding-left: 10px;
+    margin: 0;
+    line-height: 1.6;
+  }
+  
+  /* APRENDIZAJE CENTRADO EN EL ESTUDIANTE */
+  .aprendizaje-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #f5f5f5;
+  }
+  
+  .aprendizaje-text {
+    flex: 1;
+    min-width: 280px;
+    margin-right: 20px;
+  }
+  
+  .aprendizaje-text h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+  
+  .aprendizaje-text p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  .aprendizaje-text ul {
+    list-style: disc;
+    margin-left: 20px;
+  }
+  
+  .aprendizaje-image {
+    flex: 1;
+    min-width: 280px;
+    text-align: center;
+  }
+  
+  .aprendizaje-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  /* DÍA DE CLASES */
+  .dia-clases-section {
+    padding: 40px 20px;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .dia-clases-section h3 {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+  }
+  
+  .dia-clases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .dia-clase-item {
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  
+  .dia-clase-item h4 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .dia-clase-item p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  
+  /* INFRAESTRUCTURA */
+  .infraestructura-section {
+    padding: 40px 20px;
+    background-color: #f5f5f5;
+    text-align: center;
+  }
+  
+  .infraestructura-section h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+  
+  .infraestructura-section p {
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+  }
+  
+  .infraestructura-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  /* ========== LOGO ========== */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* espacio entre imagen y texto */
+    margin-bottom: 20px;
+  }
+  
+  .logo img {
+    height: 50px; /* Ajusta a tu preferencia */
+    width: auto;
+    object-fit: contain;
+  }
+  
+  /* ========== ENFOQUE SECTION GENERAL ========== */
+  .enfoque-section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f5f5f5; /* Ajusta color de fondo si deseas */
+  }
+  
+  .enfoque-section h3 {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+  }
+  
+  .carousel {
+    position: relative; 
+    max-width: 800px; /* Ajusta según tu diseño */
+    margin: 0 auto;
+    background: transparent; /* Fondo transparente */
+  }
+
+  /* Contenedor que recorta la pista y muestra 3 slides a la vez */
+  .carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    background: transparent; /* Sin fondo */
+  }
+
+  /* La pista (track) donde se acomodan los slides */
+  .carousel-track {
+    display: flex;
+    align-items: stretch; /* Hace que todas las .slide tengan la misma altura */
+    transition: transform 0.5s ease;
+    background: transparent; /* Sin fondo */
+  }
+
+  /* Cada .slide ocupará 1/3 del ancho para mostrar 3 a la vez */
+  .slide {
+    flex: 0 0 calc(100% / 3);
+    box-sizing: border-box;
+    display: flex;         
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: transparent; 
+  }
+
+  /* Tarjeta (enfoque-card) sin borde ni fondo */
+  .enfoque-card {
+    width: 100%;
+    background-color: transparent;  
+    border: none;
+    text-align: center;
+
+    /* Flex interno para acomodar icono, título y párrafo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    padding: 20px;
+  }
+
+  /* Ícono dentro de la card */
+  .enfoque-card .icon {
+    margin-bottom: 15px;
+  }
+
+  /* Ajusta el tamaño de las imágenes dentro de .icon si lo deseas */
+  .enfoque-card .icon img {
+    width: 60px;   /* Ajusta según tu diseño */
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* ======== BOTONES DE NAVEGACIÓN ======== */
+  .carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    color: #333;
+    padding: 0 10px;
+    z-index: 10; /* Para que queden por encima de las slides */
+  }
+
+  .carousel-button--left {
+    left: 0;
+  }
+
+  .carousel-button--right {
+    right: 0;
+  }
+
+  .carousel-button:hover {
+    color: #007bff;
+  }

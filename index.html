@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institución Educativa Inicial Nº37 - Santa Rosa -  Zárate     U.G.E.L. 05 - S.J.L.</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2Mmp7O-9l9nWoOb9E5wdA8ejhAZrr3WE&callback=initMap" async defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo Institución Educativa Inicial Nº37" />
+            Institución Educativa Inicial Nº37 - Santa Rosa</div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#propuesta">Propuesta Educativa &#9662;</a>
+                    <div class="dropdown-content">
+                        <a href="#pilares">Nuestros Pilares</a>
+                        <a href="#metodologia">Nuestra Metodología</a>
+                    </div>
+                </li>
+                <li><a href="#ubicacion">Ubícanos</a></li>
+                <li>
+                    <a href="#servicios">Nuestros Servicios &#9662;</a>
+                    <div class="dropdown-content">
+                        <a href="#smarttime">Smart Time</a>
+                    </div>
+                </li>
+                <li><a href="#visita">Visita Guiada</a></li>
+            </ul>
+        </nav>
+        <button class="admission-btn">Iniciar Admisión 2025</button>
+    </header>
+    <!-- Banner con imagen y botón -->
+<section class="banner">
+    <div class="banner-text">
+        Con nuestra <strong>Educación 360°</strong>, tu hijo podrá <strong>mover su mundo</strong>
+        <br><br>
+        <button class="banner-button">Solicita información</button>
+    </div>
+    <img src="banner.png" alt="Educación 360">
+</section>
+    <section id="pilares">    
+        <!-- Sección Colegio Construido para el Aprendizaje -->
+        <div class="aprendizaje">
+            <h3>Colegio construido para el aprendizaje</h3>
+            <div class="aprendizaje-content">
+                <div class="aprendizaje-text">
+                    <p><strong>La infraestructura de todos nuestros colegios es de óptima calidad.</strong></p>
+                    <p>Todos los colegios son construidos desde cero con materiales adecuados para el cuidado de los niños.</p>
+                    <p>Nuestra infraestructura está diseñada para soportar el buen desarrollo de nuestra metodología, con aulas multimedia, laboratorios completamente equipados y áreas deportivas.</p>
+                </div>
+                <img src="estructura.jpg" alt="Colegio construido para el aprendizaje">
+            </div>
+            <div class="aprendizaje-buttons">
+                <button>Conoce Donde Nos Encontramos!</button>
+            </div>
+        </div>
+    
+        <!-- Sección Nuestros Profesores -->
+        <div class="profesores">
+            <h3>Nuestros Profesores</h3>
+            <p><strong>Cumplen un rol de acompañar, moderar y retroalimentar las sesiones con los alumnos.</strong></p>
+            <div class="profesores-content">
+                <ul>
+                    <li><strong>Excelentes profesionales en educación:</strong></li>
+                    <ul>
+                        <li>Son capacitados constantemente (128 horas al año).</li>
+                        <li>Se adaptan a la metodología.</li>
+                        <li>Guían a nuestros estudiantes.</li>
+                        <li>Mantienen sus conocimientos actualizados.</li>
+                    </ul>
+                </ul>
+                <p><strong>Un programa de acompañamiento:</strong></p>
+                <p>Nuestro equipo docente cuenta con coaches pedagógicos que velan por la calidad académica y brindan retroalimentación constante.</p>
+            </div>
+        </div>
+    </section>
+    <section id="metodologia">
+        <!-- Sección "Hero" o principal: Propuesta Educativa en Inicial -->
+        <div class="hero-section">
+          <div class="hero-text">
+            <h2>Propuesta educativa en Inicial</h2>
+            <p>
+              Nuestra innovadora propuesta educativa se ha diseñado junto a la
+              Universidad de Berkeley e Insades. El foco está en guiar a nuestros
+              niños y futuras líderes para que disfruten de la investigación,
+              desarrollen la autonomía y estimulen su creatividad.
+            </p>
+          </div>
+          <div class="hero-image">
+            <!-- Reemplaza "images/inicial-hero.jpg" con la ruta real de tu imagen -->
+            <img src="niños.jpg" alt="Niños en clase">
+          </div>
+        </div>
+      
+        <!-- Enfoque de enseñanza a nivel Inicial -->
+        <div class="enfoque-section">
+            <h3>Enfoque de enseñanza a nivel Inicial</h3>
+          
+            <!-- Contenedor principal del carrusel -->
+            <div class="carousel">
+              <!-- Contenedor que recorta el overflow y muestra un slide a la vez -->
+              <div class="carousel-track-container">
+                <!-- Track (pista) donde viajan los slides -->
+                <div class="carousel-track">
+                  <!-- Slide 1 -->
+                  <div class="slide enfoque-card">
+                    <div class="icon">
+                      <img src="valor.png" alt="Icono 1" />
+                    </div>
+                    <h4>Líderes con valores</h4>
+                    <p>
+                      Nuestros pequeños alumnos se inician con habilidades que les
+                      permitirán resolver retos con empatía y responsabilidad.
+                    </p>
+                  </div>
+          
+                  <!-- Slide 2 -->
+                  <div class="slide enfoque-card">
+                    <div class="icon">
+                      <img src="desarrollo.png" alt="Icono 2" />
+                    </div>
+                    <h4>Desarrollo integral</h4>
+                    <p>
+                      Atendemos las dimensiones física, mental, socioemocional y ética
+                      de los estudiantes.
+                    </p>
+                  </div>
+          
+                  <!-- Slide 3 -->
+                  <div class="slide enfoque-card">
+                    <div class="icon">
+                      <img src="aprendizaje en equipo.png" alt="Icono 3" />
+                    </div>
+                    <h4>Aprendizaje en equipo</h4>
+                    <p>
+                      Fomentamos las habilidades blandas y la colaboración a través
+                      del trabajo en equipo.
+                    </p>
+                  </div>
+
+                  <!-- Slide 4 -->
+                  <div class="slide enfoque-card">
+                    <div class="icon">
+                      <img src="construccion de aprendizajes.png" alt="Icono 4" />
+                    </div>
+                    <h4>Construcción de aprendizajes</h4>
+                    <p>
+                      Guiamos a nuestros niños de nivel inicial para que construyan su propio aprendizaje y reciban retroalimentación.
+                    </p>
+                  </div>
+
+                  <!-- Slide 5 -->
+                  <div class="slide enfoque-card">
+                    <div class="icon">
+                      <img src="autonomia.png" alt="Icono 5" />
+                    </div>
+                    <h4>Autonomía</h4>
+                    <p>
+                      Promovemos la autonomía de nuestros alumnos de inicial para que definan sus metas,tomen las mejores decisiones y se autoevalúen.
+                    </p>
+                  </div>
+                </div>
+              </div>
+          
+              <!-- Botones de navegación -->
+              <button class="carousel-button carousel-button--left" aria-label="Anterior">
+                &#10094;
+              </button>
+              <button class="carousel-button carousel-button--right" aria-label="Siguiente">
+                &#10095;
+              </button>
+            </div>
+          </div>
+      
+        <!-- ¿Por qué elegir Innova Schools...? -->
+        <div class="porque-section">
+          <h3>¿Por qué elegir Innova Schools como colegio de inicial para tus hijos?</h3>
+          <p>
+            En Innova Schools nos enfocamos en formar a nuestros estudiantes desde
+            temprana edad, para que sean independientes y confíen en sus propias
+            capacidades. Nuestra metodología los prepara para enfrentar nuevos
+            desafíos y fomenta el gusto por la investigación.
+          </p>
+        </div>
+      
+        <!-- Testimonios de padres de familia -->
+        <div class="testimonios-section">
+          <h3>Testimonios de nuestros padres de familia y alumnos</h3>
+          <div class="testimonios-container">
+            <div class="testimonios-list">
+              <ul>
+                <li>José Antonio Villegas Gonzales</li>
+                <li>Mariela del Carmen Acosta Aria</li>
+                <li>Sisi Llalle Ramos</li>
+                <li>Julio Werner Luján Morón</li>
+              </ul>
+            </div>
+            <div class="testimonio-detalle">
+              <blockquote>
+                <p>
+                  "Mis dos menores hijas iniciaron su educación regular en Innova
+                  Schools en abril de 2020, en mitad de la pandemia. Me sorprende
+                  el avance que han logrado y el entusiasmo que muestran al
+                  aprender día a día. Anhelo que mi otra hija pueda ingresar para
+                  continuar su educación de calidad. Me encanta ver cómo practican
+                  valores y desarrollan su interés por la investigación."
+                </p>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Aprendizaje centrado en el estudiante -->
+        <div class="aprendizaje-section">
+          <div class="aprendizaje-text">
+            <h3>Aprendizaje centrado en el estudiante</h3>
+            <p>
+              Nuestros estudiantes son el centro del aprendizaje y se promueven
+              sus habilidades de autonomía, investigación y trabajo en equipo
+              desde el primer nivel escolar. Nuestra propuesta educativa para
+              el nivel inicial está enfocada en:
+            </p>
+            <ul>
+              <li>Juego Exploratorio</li>
+              <li>Storytelling</li>
+              <li>Trabajo en equipo</li>
+            </ul>
+          </div>
+          <div class="aprendizaje-image">
+            <!-- Reemplaza "images/aprendizaje-inicial.jpg" con la ruta real de tu imagen -->
+            <img src="aprendizaje 2.jpg" alt="Alumnos en clase">
+          </div>
+        </div>
+      
+        <!-- ¿Cómo es un día de clases en inicial? -->
+        <div class="dia-clases-section">
+          <h3>¿Cómo es un día de clases en inicial?</h3>
+          <div class="dia-clases-grid">
+            <div class="dia-clase-item">
+              <h4>Juego Exploratorio</h4>
+              <p>
+                Permite que los niños exploren y desarrollen su creatividad,
+                preparándolos para el aprendizaje.
+              </p>
+            </div>
+            <div class="dia-clase-item">
+              <h4>Morning Meeting (Reunión de la Mañana)</h4>
+              <p>
+                Espacio para saludos y compartir pensamientos, fortaleciendo
+                habilidades comunicativas.
+              </p>
+            </div>
+            <div class="dia-clase-item">
+              <h4>Learning Center (Centro de aprendizaje)</h4>
+              <p>
+                Actividades guiadas e independientes enfocadas en Comunicación,
+                Matemática y habilidades sociales.
+              </p>
+            </div>
+            <div class="dia-clase-item">
+              <h4>Sharing Time (Tiempo de compartir)</h4>
+              <p>
+                Momento de reflexión y diálogo para promover el pensamiento crítico
+                y el intercambio de ideas.
+              </p>
+            </div>
+            <div class="dia-clase-item">
+              <h4>Storytelling (Narración de historias)</h4>
+              <p>
+                Desarrolla la creatividad, la expresión oral y el gusto por la
+                lectura y escritura.
+              </p>
+            </div>
+            <div class="dia-clase-item">
+              <h4>Small Groups (Grupos pequeños)</h4>
+              <p>
+                Actividades en grupos reducidos para observación y guía más cercana
+                por parte de los docentes.
+              </p>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Infraestructura adecuada para la educación inicial -->
+        <div class="infraestructura-section">
+          <h3>Infraestructura adecuada para la educación inicial</h3>
+          <p>
+            Nuestras aulas han sido especialmente diseñadas para promover el
+            aprendizaje de nuestros estudiantes. Cada uno de nuestros espacios
+            son amplios y acogedores para promover calma y tranquilidad, y los
+            materiales son variados y adaptados a cada etapa de su desarrollo.
+          </p>
+          <div class="infraestructura-image">
+            <!-- Reemplaza "images/infraestructura-inicial.jpg" con la ruta real de tu imagen -->
+            <img src="aprendizaje 3.jpg" alt="Infraestructura de aulas">
+          </div>
+        </div>
+      </section>      
+    <section id="ubicacion">
+        <h2>Nuestra Ubicación</h2>
+        <div id="map"></div>
+    </section>
+    <section id="smarttime">
+        <h2>Smart Time</h2>
+    </section>
+    <section id="visita">
+        <h2>Visita Guiada</h2>
+    </section>
+</body>
+</html>
