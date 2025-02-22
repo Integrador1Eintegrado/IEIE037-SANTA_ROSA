@@ -1,633 +1,884 @@
-/* Estilos generales */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
+/************************************************************
+ * 1. VARIABLES Y ESTILOS BASE
+ ************************************************************/
+ :root {
+  --primary-color: #0077b6;
+  --secondary-color: #0096c7;
+  --accent-color: #ff9900;
+  --bg-light: #f5f5f5;
+  --font-base: 16px;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: var(--font-base);
+  background-color: var(--bg-light);
+}
+
+/************************************************************
+ * 2. ENCABEZADO (HEADER) Y NAVEGACIÓN
+ ************************************************************/
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f4f4f4;
-    padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f4f4;
+  padding: 1rem 2.5rem;
+  flex-wrap: wrap;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mobile-menu-btn {
+  display: none;            /* Solo se verá en móvil */
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #0077b6;           /* Ajusta a tu color primario */
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    color: #0077b6;
-    font-size: 20px;
-    font-weight: bold;
+  display: flex;
+  align-items: center;   /* Centra imagen y texto verticalmente */
+  gap: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #0077b6;
+  margin-bottom: 0;      /* Quita la separación que desalineaba */
 }
 
 .logo img {
-    height: 50px; 
-    margin-right: 10px;
+  height: 50px;
+  width: auto;
+  object-fit: contain;
 }
 
-/* Estilos de la navegación */
 nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+/* Menú en escritorio: se muestra horizontal */
+#main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+#main-nav ul li a {
+  color: #0077b6;
+  text-decoration: none;
+  font-size: 16px;
 }
 
 nav ul li {
-    position: relative;
+  position: relative;
 }
 
 nav ul li a {
-    color: #0077b6;
-    text-decoration: none;
-    font-size: 16px;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 16px;
 }
 
+/* Dropdown */
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f4f4f4;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 100;
+  display: none;
+  position: absolute;
+  background-color: #f4f4f4;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 100;
 }
 
 nav ul li:hover .dropdown-content {
-    display: block;
+  display: block;
 }
 
 .dropdown-content a {
-    display: block;
-    padding: 10px;
-    color: #0096c7;
+  display: block;
+  padding: 10px;
+  color: var(--secondary-color);
 }
 
+/* Botón de admisión */
 .admission-btn {
-    background-color: #0077b6;
-    border: none;
-    color: #f4f4f4;
-    padding: 15px 25px;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
+  background-color: #0077b6;
+  border: none;
+  color: #f4f4f4;
+  padding: 15px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .admission-btn:hover {
-    background-color: #ff9900;
-    color: white;
+  background-color: var(--accent-color);
+  color: white;
 }
 
-
-#propuesta {
-    display: none;
-}
-
-
+/************************************************************
+ * 3. BANNER / PORTADA
+ ************************************************************/
 .banner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #0096c7;
-    padding: 50px;
-    color: white;
-    height: 100%;
-
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--secondary-color);
+  padding: 50px;
+  color: white;
 }
+
 .banner img {
-    width: 50%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+  width: 50%;
+  height: auto;
+  object-fit: cover;
 }
 
 .banner-text {
-    width: 50%;
-    font-size: 26px;
-    font-weight: bold;
-    padding-right: 40px;
+  width: 50%;
+  font-size: 26px;
+  font-weight: bold;
+  padding-right: 40px;
 }
 
 .banner-text strong {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .banner-button {
-    background-color: white;
-    color: #0077b6;
-    border: none;
-    padding: 15px 25px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 50px;
-    cursor: pointer;
+  background-color: white;
+  color: var(--primary-color);
+  border: none;
+  padding: 15px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .banner-button:hover {
-    background-color: #ffcc00;
-    color: black;
+  background-color: #ffcc00;
+  color: black;
 }
 
+/************************************************************
+ * 4. SECCIONES GENERALES
+ ************************************************************/
+/* Ejemplo de contenedor central para pantallas grandes */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Sección Ubicación */
 #map {
-    width: 100%;
-    height: 400px;
-    margin-top: 20px;
+  width: 100%;
+  height: 400px;
+  margin-top: 20px;
+}
+
+/************************************************************
+ * 5. APRENDIZAJE / PROFESORES
+ ************************************************************/
+.aprendizaje,
+.profesores {
+  margin: 50px auto;
+  padding: 20px;
+  max-width: 1200px;
 }
 
 .aprendizaje {
-    width: 80%;
-    margin: auto;
-    text-align: center;
-    padding: 50px 0;
-}
-.aprendizaje, .profesores {
-    margin: 50px auto;
-    padding: 20px;
-    max-width: 1200px;
+  width: 80%;
+  text-align: center;
+  padding: 50px 0;
+  margin: auto;
 }
 
-.aprendizaje-content{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
+.aprendizaje-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .aprendizaje img {
-    width: 50%;
-    max-width: 500px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  width: 50%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.aprendizaje-text {
+  flex: 1;
+  text-align: left;
+  font-size: 18px;
+  line-height: 1.5;
 }
 
 .aprendizaje-buttons {
-    margin-top: 20px;
+  margin-top: 20px;
 }
-.aprendizaje-text {
-    flex: 1;
-    text-align: left;
-    font-size: 18px;
-    line-height: 1.5;
-}   
+
+.aprendizaje-buttons button {
+  background: transparent;
+  border: 2px solid #007bff;
+  color: #007bff;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
 
 .aprendizaje-buttons button:hover {
-    background: #007bff;
-    color: white;
+  background: #007bff;
+  color: white;
 }
-.aprendizaje-buttons button {
-    background: transparent;
-    border: 2px solid #007bff;
-    color: #007bff;
-    padding: 10px 20px;
-    margin: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: all 0.3s ease;
+
+/* Sección Profesores */
+.profesores {
+  width: 100%;
+  min-height: 50vh;
+  background: url('profesores.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
+.profesores::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 .profesores-content {
-    width: 80%;
-    max-width: 900px;
-    text-align: left;
-    position: relative;
-    z-index: 2;
-}
-.profesores {
-    width: 50vw;  /* Rellena todo el ancho de la pantalla */
-    height: 50vh; /* Ajusta la altura al 100% de la pantalla */
-    background: url('profesores.jpg') no-repeat center center;
-    background-size: cover; /* Cubre todo el espacio sin dejar bordes */
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 30px 471px;
-    position: relative;
-    margin: 0;
-}
-.profesores::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Oscurece la imagen para mejorar la visibilidad del texto */
-    z-index: 1;
-}
-.profesores ul {
-    list-style: none;
-    padding: 0;
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
 }
 
-.profesores ul li {
-    margin: 5px 0;
-    position: relative;
-    z-index: 2;
-}
-
-/* Encabezados y párrafos */
 .profesores h3 {
-    font-size: 28px;
-    font-weight: bold;
-    position: relative;
-    z-index: 2;
+  font-size: 28px;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
 }
 
 .profesores p {
-    font-size: 18px;
-    margin-top: 10px;
-    position: relative;
-    z-index: 2;
+  font-size: 18px;
+  margin-top: 10px;
+  position: relative;
+  z-index: 2;
 }
-/* Barra decorativa */
+
+.profesores ul {
+  list-style: none;
+  padding: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.profesores ul li {
+  margin: 5px 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* Barra decorativa en h3 */
 .profesores-content h3::before {
-    content: "";
-    display: block;
-    width: 50px;
-    height: 4px;
-    background: #ffffff;
-    margin-bottom: 10px;
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: #ffffff;
+  margin-bottom: 10px;
 }
 
-.profesores-content p strong {
-    font-weight: bold;
+/************************************************************
+ * 6. OTRAS SECCIONES (Hero, Enfoque, Testimonios, etc.)
+ ************************************************************/
+.hero-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #f5f5f5;
 }
 
-/* ESTILOS GENERALES */
-#metodologia {
-    font-family: Arial, sans-serif;
-    color: #333;
-    background-color: #fff;
-  }
-  
-  /* SECCIÓN HERO (PORTADA) */
-  .hero-section {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 40px 20px;
-    background-color: #f5f5f5;
-  }
-  
-  .hero-text {
-    flex: 1;
-    min-width: 280px;
-    margin-right: 20px;
-  }
-  
-  .hero-text h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-  }
-  
-  .hero-text p {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  
-  .hero-image {
-    flex: 1;
-    min-width: 280px;
-    text-align: center;
-  }
-  
-  .hero-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-  }
-  
-  /* ENFOQUE DE ENSEÑANZA */
-  .enfoque-section {
-    padding: 40px 20px;
-    text-align: center;
-  }
-  
-  .enfoque-section h3 {
-    font-size: 1.8em;
-    margin-bottom: 30px;
-  }
-  
-  .enfoque-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .enfoque-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    flex: 1 1 250px;
-    max-width: 300px;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: left; /* O 'center' si prefieres */
-  }
-  
-  .enfoque-card .icon {
-    margin-bottom: 15px;
-    text-align: center;
-  }
-  
-  .enfoque-card h4 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-  }
-  
-  .enfoque-card p {
-    font-size: 0.95rem;
-    line-height: 1.4;
-  }
-  
-  /* ¿POR QUÉ ELEGIR...? */
-  .porque-section {
-    background-color: #f5f5f5;
-    padding: 40px 20px;
-    text-align: center;
-  }
-  
-  .porque-section h3 {
-    font-size: 1.8em;
-    margin-bottom: 20px;
-  }
-  
-  .porque-section p {
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.6;
-  }
-  
-  /* TESTIMONIOS */
-  .testimonios-section {
-    padding: 40px 20px;
-    background-color: #fff;
-  }
-  
-  .testimonios-section h3 {
-    text-align: center;
-    font-size: 1.8em;
-    margin-bottom: 30px;
-  }
-  
-  .testimonios-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .testimonios-list {
-    flex: 1 1 200px;
-    max-width: 250px;
-  }
-  
-  .testimonios-list ul {
-    list-style: none;
-  }
-  
-  .testimonios-list li {
-    margin-bottom: 10px;
-    padding-left: 15px;
-    position: relative;
-  }
-  
-  .testimonios-list li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: #007BFF;
-  }
-  
-  .testimonio-detalle {
-    flex: 2 1 400px;
-    max-width: 600px;
-  }
-  
-  .testimonio-detalle blockquote {
-    font-style: italic;
-    border-left: 4px solid #007bff;
-    padding-left: 10px;
-    margin: 0;
-    line-height: 1.6;
-  }
-  
-  /* APRENDIZAJE CENTRADO EN EL ESTUDIANTE */
-  .aprendizaje-section {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 40px 20px;
-    background-color: #f5f5f5;
-  }
-  
-  .aprendizaje-text {
-    flex: 1;
-    min-width: 280px;
-    margin-right: 20px;
-  }
-  
-  .aprendizaje-text h3 {
-    font-size: 1.8em;
-    margin-bottom: 20px;
-  }
-  
-  .aprendizaje-text p {
-    line-height: 1.6;
-    margin-bottom: 15px;
-  }
-  
-  .aprendizaje-text ul {
-    list-style: disc;
-    margin-left: 20px;
-  }
-  
-  .aprendizaje-image {
-    flex: 1;
-    min-width: 280px;
-    text-align: center;
-  }
-  
-  .aprendizaje-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-  }
-  
-  /* DÍA DE CLASES */
-  .dia-clases-section {
-    padding: 40px 20px;
-    background-color: #fff;
-    text-align: center;
-  }
-  
-  .dia-clases-section h3 {
-    font-size: 1.8em;
-    margin-bottom: 30px;
-  }
-  
-  .dia-clases-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+.hero-text {
+  flex: 1;
+  min-width: 280px;
+  margin-right: 20px;
+}
+
+.hero-text h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.hero-image {
+  flex: 1;
+  min-width: 280px;
+  text-align: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Sección enfoque de enseñanza */
+.enfoque-section {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f5f5f5;
+}
+
+.enfoque-section h3 {
+  font-size: 1.8em;
+  margin-bottom: 30px;
+}
+
+.enfoque-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.enfoque-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  flex: 1 1 250px;
+  max-width: 300px;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: left; 
+}
+
+.enfoque-card .icon {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.enfoque-card h4 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.enfoque-card p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* ¿Por qué elegir...? */
+.porque-section {
+  background-color: #f5f5f5;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.porque-section h3 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+.porque-section p {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Testimonios */
+.testimonios-section {
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+.testimonios-section h3 {
+  text-align: center;
+  font-size: 1.8em;
+  margin-bottom: 30px;
+}
+
+.testimonios-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.testimonios-list {
+  flex: 1 1 200px;
+  max-width: 250px;
+}
+
+.testimonios-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.testimonios-list li {
+  margin-bottom: 10px;
+  padding-left: 15px;
+  position: relative;
+}
+
+.testimonios-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #007BFF;
+}
+
+.testimonio-detalle {
+  flex: 2 1 400px;
+  max-width: 600px;
+}
+
+.testimonio-detalle blockquote {
+  font-style: italic;
+  border-left: 4px solid #007bff;
+  padding-left: 10px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Aprendizaje centrado en el estudiante */
+.aprendizaje-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #f5f5f5;
+}
+
+.aprendizaje-section .aprendizaje-text {
+  flex: 1;
+  min-width: 280px;
+  margin-right: 20px;
+}
+
+.aprendizaje-section .aprendizaje-text h3 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+.aprendizaje-section .aprendizaje-text p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.aprendizaje-section .aprendizaje-text ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+.aprendizaje-section .aprendizaje-image {
+  flex: 1;
+  min-width: 280px;
+  text-align: center;
+}
+
+.aprendizaje-section .aprendizaje-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Día de clases */
+.dia-clases-section {
+  padding: 40px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.dia-clases-section h3 {
+  font-size: 1.8em;
+  margin-bottom: 30px;
+}
+
+.dia-clases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dia-clase-item {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.dia-clase-item h4 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.dia-clase-item p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Infraestructura */
+.infraestructura-section {
+  padding: 40px 20px;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+.infraestructura-section h3 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+.infraestructura-section p {
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  line-height: 1.6;
+}
+
+.infraestructura-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/************************************************************
+ * 7. CAROUSEL (ENFOQUE)
+ ************************************************************/
+.carousel {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  background: transparent;
+}
+
+.carousel-track-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  background: transparent;
+}
+
+.carousel-track {
+  display: flex;
+  align-items: stretch;
+  transition: transform 0.5s ease;
+  background: transparent;
+}
+
+.slide {
+  flex: 0 0 calc(100% / 3);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: transparent;
+}
+
+.enfoque-card {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
+.enfoque-card .icon {
+  margin-bottom: 15px;
+}
+
+.enfoque-card .icon img {
+  width: 60px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Botones de navegación del carousel */
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #333;
+  padding: 0 10px;
+  z-index: 10;
+}
+
+.carousel-button--left {
+  left: 0;
+}
+
+.carousel-button--right {
+  right: 0;
+}
+
+.carousel-button:hover {
+  color: #007bff;
+}
+
+/************************************************************
+ * 8. MEDIA QUERIES
+ ************************************************************/
+@media (min-width: 1200px) {
+  .container {
     max-width: 1200px;
     margin: 0 auto;
   }
-  
-  .dia-clase-item {
-    background-color: #f5f5f5;
-    border-radius: 5px;
-    padding: 20px;
+  body {
+    font-size: 1rem;
   }
-  
-  .dia-clase-item h4 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-  }
-  
-  .dia-clase-item p {
-    font-size: 0.95rem;
-    line-height: 1.4;
-  }
-  
-  /* INFRAESTRUCTURA */
-  .infraestructura-section {
-    padding: 40px 20px;
-    background-color: #f5f5f5;
-    text-align: center;
-  }
-  
-  .infraestructura-section h3 {
-    font-size: 1.8em;
-    margin-bottom: 20px;
-  }
-  
-  .infraestructura-section p {
-    max-width: 800px;
-    margin: 0 auto 30px auto;
-    line-height: 1.6;
-  }
-  
-  .infraestructura-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-  }
-  /* ========== LOGO ========== */
-.logo {
-    display: flex;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  header {
+    flex-direction: row;
     align-items: center;
-    gap: 10px; /* espacio entre imagen y texto */
-    margin-bottom: 20px;
-  }
-  
-  .logo img {
-    height: 50px; /* Ajusta a tu preferencia */
-    width: auto;
-    object-fit: contain;
-  }
-  
-  /* ========== ENFOQUE SECTION GENERAL ========== */
-  .enfoque-section {
-    padding: 40px 20px;
-    text-align: center;
-    background-color: #f5f5f5; /* Ajusta color de fondo si deseas */
-  }
-  
-  .enfoque-section h3 {
-    font-size: 1.8em;
-    margin-bottom: 30px;
-  }
-  
-  .carousel {
-    position: relative; 
-    max-width: 800px; /* Ajusta según tu diseño */
-    margin: 0 auto;
-    background: transparent; /* Fondo transparente */
+    justify-content: space-between;
   }
 
-  /* Contenedor que recorta la pista y muestra 3 slides a la vez */
-  .carousel-track-container {
-    overflow: hidden;
+  .banner {
+    padding: 40px;
+  }
+
+  .banner img,
+  .banner-text {
     width: 100%;
-    position: relative;
-    background: transparent; /* Sin fondo */
   }
 
-  /* La pista (track) donde se acomodan los slides */
-  .carousel-track {
-    display: flex;
-    align-items: stretch; /* Hace que todas las .slide tengan la misma altura */
-    transition: transform 0.5s ease;
-    background: transparent; /* Sin fondo */
-  }
 
-  /* Cada .slide ocupará 1/3 del ancho para mostrar 3 a la vez */
   .slide {
-    flex: 0 0 calc(100% / 3);
-    box-sizing: border-box;
-    display: flex;         
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background: transparent; 
+    flex: 0 0 calc(100% / 2);
   }
 
-  /* Tarjeta (enfoque-card) sin borde ni fondo */
-  .enfoque-card {
-    width: 100%;
-    background-color: transparent;  
-    border: none;
-    text-align: center;
-
-    /* Flex interno para acomodar icono, título y párrafo */
+  .mobile-menu-btn {
+    display: none;
+  }
+  #main-nav {
+    display: block;
+  }
+  #main-nav ul {
     display: flex;
+  }
+}
+
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-start;
+    gap: 1rem; 
+  }
+  .header-left {
+    gap: 0.5rem;
+  }
+  nav ul {
     flex-direction: column;
-    justify-content: center; 
-    padding: 20px;
+    gap: 10px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
   }
 
-  /* Ícono dentro de la card */
-  .enfoque-card .icon {
-    margin-bottom: 15px;
+  nav ul {
+    display: flex;
+  }
+  nav.active ul {
+    display: flex;
   }
 
-  /* Ajusta el tamaño de las imágenes dentro de .icon si lo deseas */
-  .enfoque-card .icon img {
-    width: 60px;   /* Ajusta según tu diseño */
-    height: auto;
-    object-fit: contain;
+  /* Banner */
+  .banner {
+    flex-direction: column;
+    padding: 30px;
+  }
+  .banner img,
+  .banner-text {
+    width: 100%;
+  }
+  .banner-text {
+    padding-right: 0;
+    text-align: center;
+    font-size: 1.5rem;
   }
 
-  /* ======== BOTONES DE NAVEGACIÓN ======== */
-  .carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+  /* Aprendizaje */
+  .aprendizaje-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .aprendizaje img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Profesores */
+  .profesores {
+    width: 90%;
+    min-height: auto;
+    padding: 1rem;
+  }
+
+  /* Carousel: mostrar 1 slide a la vez */
+  .slide {
+    flex: 0 0 100%;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+    font-size: 1.8rem; 
     background: none;
     border: none;
+    color: var(--primary-color);
     cursor: pointer;
-    font-size: 2rem;
-    color: #333;
-    padding: 0 10px;
-    z-index: 10; /* Para que queden por encima de las slides */
+  }
+  #main-nav {
+    display: none;
+    width: 100%;
+  }
+  #main-nav.active {
+    display: block;
+  }
+   #main-nav ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 1rem;
+    background-color: #f4f4f4;
   }
 
-  .carousel-button--left {
-    left: 0;
+  /* Cuando .active se agrega a #main-nav, mostramos el menú */
+  #main-nav.active ul {
+    display: flex;
+  }
+  .admission-btn {
+    margin-left: auto; 
+    margin-top: 0; /* Por si hereda algún margin */
+  }
+}
+
+/* Móviles muy pequeños (hasta 480px) */
+@media (max-width: 480px) {
+  header {
+    padding: 0.5rem;
+  }
+  .admission-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .banner {
+    padding: 20px;
+  }
+  .banner-text {
+    font-size: 1.2rem;
+  }
+}
+
+
+/***********************************************
+  MEDIA QUERIES
+***********************************************/
+
+@media (min-width: 769px) {
+
+  .mobile-menu-btn {
+    display: none;
+  }
+  #main-nav {
+    display: block;
+  }
+}
+
+
+@media (max-width: 768px) {
+  
+  header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
   }
 
-  .carousel-button--right {
-    right: 0;
+  .header-left {
+    display: flex;
+  align-items: center;
+  gap: 1rem;
   }
 
-  .carousel-button:hover {
-    color: #007bff;
+
+  .mobile-menu-btn{
+    display: block;
   }
+  #main-nav {
+    display: none;
+  }
+
+  #main-nav.active {
+    display: block;
+    width: 100%;
+    background-color: #f4f4f4;
+  }
+
+  #main-nav ul {
+    display: flex; 
+    flex-direction: column;
+    gap: 10px;
+    padding: 1rem;
+  }
+
+  .admission-btn {
+    margin-left: auto;
+  }
+}
